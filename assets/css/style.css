@@ -1,10 +1,9 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-  	color: white;;
+  	color: white;
 }
 
 #container {
@@ -12,8 +11,7 @@
     height: 100vh;
     align-items: center;
     justify-content: space-around;
-  	background: rgb(128,128,128);
-	background: radial-gradient(circle, rgba(128,128,128,1) 35%, rgba(0,0,0,1) 100%);
+    background: black;
 }
 
 #form {
@@ -22,10 +20,9 @@
     width: 450px;
     padding: 20px;
     border-radius: 10px;
-  	border: 7px solid green;
-  	border-top: 4px solid red;
     align-items: center;
-
+  	background-image: radial-gradient(circle at 50% -20.71%, #807728 0, #737427 8.33%, #646f27 16.67%, #546828 25%, #456027 33.33%, #355526 41.67%, #254923 50%, #173d20 58.33%, #0a321c 66.67%, #022919 75%, #002217 83.33%, #001d14 91.67%, #001912 100%);
+  box-shadow: 2px 3px 30px green;
 }
 
 #input-field {
@@ -37,9 +34,8 @@
 
 #form a {
     text-decoration: none;
-    color: white;
+    color: ;
     margin: 10px;
-  	
 }
 
 
@@ -75,7 +71,7 @@
     margin-left: 10px;
     font-size: 20px;
     border: none;
+  	background: none;
     border-bottom: 2px solid white;
     outline: 0;
-  	background: none;
 }
