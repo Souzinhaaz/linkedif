@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+  	color: white;;
 }
 
 #container {
@@ -11,6 +12,8 @@
     height: 100vh;
     align-items: center;
     justify-content: space-around;
+  	background: rgb(128,128,128);
+	background: radial-gradient(circle, rgba(128,128,128,1) 35%, rgba(0,0,0,1) 100%);
 }
 
 #form {
@@ -19,7 +22,10 @@
     width: 450px;
     padding: 20px;
     border-radius: 10px;
+  	border: 7px solid green;
+  	border-top: 4px solid red;
     align-items: center;
+
 }
 
 #input-field {
@@ -31,8 +37,9 @@
 
 #form a {
     text-decoration: none;
-    color: #01962e;
+    color: white;
     margin: 10px;
+  	
 }
 
 
@@ -68,6 +75,7 @@
     margin-left: 10px;
     font-size: 20px;
     border: none;
-    border-bottom: 2px solid #01962e;
+    border-bottom: 2px solid white;
     outline: 0;
+  	background: none;
 }
