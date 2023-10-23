@@ -6,28 +6,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(124, 124, 124);
-    height: 20vh;
-}
-
-header img {
-    width: 30%;
-}
-
 #container {
     display: flex;
-    height: 60vh;
+    height: 100vh;
     align-items: center;
     justify-content: space-around;
-}
-
-#imagem img{
-    width: 600px;
-
 }
 
 #form {
@@ -87,13 +70,4 @@ header img {
     border: none;
     border-bottom: 2px solid #01962e;
     outline: 0;
-}
-
-footer {
-    display: flex;
-    height: 20vh;
-    color: white;
-    background-color: #01962e;
-    justify-content: space-around;
-    align-items: center;
 }
