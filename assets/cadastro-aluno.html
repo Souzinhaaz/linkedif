@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/cadastro-aluno.css">
     <!-- Favicon -->
     <link href="img/globo.png" rel="icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
     <main id="container"> 
@@ -29,10 +30,10 @@
                     <div class="input">
                         <label for="password">Senha: </label>
                         <input type="password" id="password" name="password" required>
+                        <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
                     </div>
 
                     <a href="cadastro-prof.html">Cadastrar como professor</a>
-                    <a href="index.html">Voltar ao site principal</a>
 
                     <button type="submit" id="botao" >Cadastrar</button>
 
@@ -45,5 +46,6 @@
 
     </main>
     
+    <script src="js/script.js"></script>
 </body>
 </html>
