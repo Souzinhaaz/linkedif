@@ -27,12 +27,7 @@
   	
 }
 
-#input-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    
-}
+
 
 #form a {
     text-decoration: none;
@@ -40,10 +35,7 @@
 }
 
 
-#form h1{
-    text-align: center;
-    margin-bottom: 20px;
-}
+
 
 #botao{
     margin-top: 20px;
@@ -62,7 +54,7 @@
     display: flex;
     padding: 10px;
     justify-content: center;
-    align-items: center;
+    
     font-size: 20px
 }
 
@@ -75,4 +67,14 @@
   	background: none;
     border-bottom: 2px solid #01962e;
     outline: 0;
+}
+
+.input i{
+    display: flex;
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+    align-self: flex-end;
+    
+
 }

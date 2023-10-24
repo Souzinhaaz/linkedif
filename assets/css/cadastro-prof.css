@@ -81,3 +81,13 @@
     cursor: pointer;
     align-self: center;
 }
+
+.input i{
+    
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    color: gray;
+    
+
+}
