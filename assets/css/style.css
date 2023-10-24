@@ -34,7 +34,7 @@
 
 #form a {
     text-decoration: none;
-    color: ;
+    
     margin: 10px;
 }
 
@@ -75,7 +75,6 @@
     border-bottom: 2px solid white;
     outline: 0;
 }
-<<<<<<< HEAD
 
 footer {
     display: flex;
@@ -527,5 +526,3 @@ footer {
     padding-right: 0;
     border-right: none;
 }
-=======
->>>>>>> a4b52a56b214943837719ea8814080ec1dd26cde
