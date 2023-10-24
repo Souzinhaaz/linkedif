@@ -19,6 +19,9 @@
     flex-direction: column;
     width: 450px;
     padding: 20px;
+    border: none;
+    border: 3px solid #01962e;
+    border-top: 3px solid red;
     border-radius: 10px;
     align-items: center;
   	
@@ -72,13 +75,4 @@
   	background: none;
     border-bottom: 2px solid #01962e;
     outline: 0;
-}
-
-footer {
-    display: flex;
-    height: 20vh;
-    color: white;
-    background-color: #01962e;
-    justify-content: space-around;
-    align-items: center;
 }
