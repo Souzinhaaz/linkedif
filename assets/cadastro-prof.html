@@ -1,51 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkedIF</title>
     <link rel="stylesheet" href="css/cadastro-prof.css">
-    <!-- Favicon -->
-    <link href="img/globo.png" rel="icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <main id="container">
-        <div id="form-login">
-            <h1>Cadastro de Professores</h1>
+    <div id="container">
 
-            <form action="index.html" method="get" id="form-input">
-                <fieldset id="formulario">
-
-                    <div class="input">
-                        <label for="user">Usuário: </label>
-                        <input type="text" id="user" name="user" required>
-                    </div>
-
-                    <div class="input">
-                        <label for="email">Email: </label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="input">
-                        <label for="password">Senha: </label>
-                        <input type="password" id="password" name="password" required>
-                        <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
-                    </div>
-
-                    <a href="cadastro-aluno.html">Cadastrar como aluno</a>
-
-                    <button type="submit" id="botao" >Cadastrar</button>
-
-                </fieldset>
-                
-            </form>
-
+        <div id="imagem">
+            <img src="img/foto campus.jpg" alt="foto do campus lapa if baiano">
         </div>
-        
 
-    </main>
+        <div id="cadastro">
+            <form action="#" method="post">
+                <fieldset id="campo-formulario">
+
+                    <nav>
+                        <div id="titulo">
+                            <h1>Cadastre-se</h1>
+                        </div>
+        
+                    </nav>
+                
+                    <div id="inputs">
+                        <div class="input-box">
+                            <label for="first-name">Primeiro Nome</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="Digite o seu primeiro nome" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="last-name">Sobrenome</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Digite seu sobrenome" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="phone">Celular</label>
+                            <input type="tel" id="celular" name="celular" placeholder="(XX) XXXX-XXXX" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="password-confirm">Confirme sua Senha</label>
+                            <input type="password" id="password-confirm" name="password-confirm" placeholder="Digite sua senha novamente" required>
+                        </div>
+
+                    </div>
+
+                    <div id="input-radio">
+                        <label for="genero">Gênero</label>
+
+                        <label for="feminino">Feminino</label>
+                        <input type="radio" id="fem" name="genero" value="fem" checked>
+
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" id="mas" name="genero" value="mas">
+
+                        <label for="outros">Outros</label>
+                        <input type="radio" id="outros" name="genero" value="outros">
+
+                        <label for="prefiro">Prefiro não dizer</label>
+                        <input type="radio" id="prefiro" name="genero" value="prefiro">
+                    </div>
+
+                    <div id="botao">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                
+                </fieldset>
+
+            </form>
+        </div>
+
+
+
+    </div>
+
     
+
+
+    <!-- <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i> -->
     <script src="js/script.js"></script>
 </body>
 </html>
