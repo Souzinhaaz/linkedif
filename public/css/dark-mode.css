@@ -1,0 +1,30 @@
+/* dark-mode.css */
+
+/* Alteração de cores */
+body.dark-theme {
+    background-color: #2d3047; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto principal */
+}
+
+.navbar.dark-theme {
+    background-color: #2d3047; /* Cor de fundo da barra de navegação */
+    color: #fff; /* Cor do texto da barra de navegação */
+}
+
+.section-title.dark-theme {
+    background-color: #2d3047;
+}
+
+.service-item.dark-theme {
+    background-color: #034c2b;
+    color: #fff;
+}
+
+.student.dark-theme {
+    background-color: #034c2b;
+    color: #fff;
+}
+
+.student.dark-theme .text-center h5 {
+    color: #fff;
+}

@@ -1,0 +1,60 @@
+CREATE DATABASE IF NOT EXISTS linkedif;
+
+USE linkedif;
+
+CREATE TABLE IF NOT EXISTS alunos (
+    id_aluno int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    email varchar(50) not null unique,
+    telefone varchar(30) not null,
+    senha varchar(255) not null,
+    CPF varchar(30) not null unique 
+);
+
+CREATE TABLE IF NOT EXISTS professores (
+	id_professor int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    email varchar(50) not null unique,
+    telefone varchar(30) not null,
+    senha varchar(255) not null,
+    CPF varchar(30) not null unique
+);
+
+
+CREATE TABLE IF NOT EXISTS administradores (
+    id_admin int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    email varchar(50) not null unique,
+    telefone varchar(30) not null,
+    senha varchar(255) not null,
+    CPF varchar(30) not null unique,
+    isadmin boolean 
+);
+
+CREATE TABLE IF NOT EXISTS disciplinas (
+    id_disciplina int PRIMARY KEY AUTO_INCREMENT,
+    descricao text,
+    nome varchar(40) not null
+);
+
+CREATE TABLE IF NOT EXISTS comentarios (
+    id_comentario INT PRIMARY KEY AUTO_INCREMENT,
+    texto TEXT not null,
+    data_modificacao DATE not null,
+    alunos_id_aluno INT,
+    administradores_id_admin INT,
+    professor_id_professor INT,
+    FOREIGN KEY(alunos_id_aluno) REFERENCES alunos(id_aluno),
+    FOREIGN KEY(professor_id_professor) REFERENCES professores(id_professor)
+); 
+
+CREATE TABLE IF NOT EXISTS posts (
+    id_post INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) not null,
+    conteudo TEXT not null,
+    alunos_id_aluno INT,
+    administradores_id_admin INT,
+    professor_id_professor INT,
+    FOREIGN KEY(alunos_id_aluno) REFERENCES alunos(id_aluno),
+    FOREIGN KEY(professor_id_professor) REFERENCES professores(id_professor)
+)
