@@ -7,7 +7,7 @@ function findById($id_professor) {
   $sql = "SELECT id_professor, nome, email, telefone, cpf FROM professores WHERE id_professor=?;";
   $stmt = $mysqli->prepare($sql);
   if (!$stmt) {
-    die("Erro ao achar, Problema no acesso ao banco de dados");
+    die("Erro ao encontrar, Problema no acesso ao banco de dados");
   }
   $stmt->bind_param("i", $id_professor);
   $stmt->execute();

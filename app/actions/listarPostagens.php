@@ -12,4 +12,8 @@ if($result->num_rows > 0){
 
 close();
 
-return $listaPosts;
+if (isset($listaPosts)) {
+   return $listaPosts;
+} else {
+   return false;
+}

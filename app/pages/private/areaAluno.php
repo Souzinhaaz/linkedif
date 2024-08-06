@@ -50,7 +50,7 @@ include("../../config/protect.php");
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
+      <!-- <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Criar novo material didático</h5>
@@ -58,7 +58,7 @@ include("../../config/protect.php");
             <a href="#" class="btn btn-primary">Criar material didático</a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- Opções End -->
@@ -66,22 +66,41 @@ include("../../config/protect.php");
   <div class="container-xxl">
     <h1>Postagens</h1>
 
+    <?php
+      if (isset($_GET['msg-error'])) {
+        echo "<div class='alert alert-danger' role='alert'>
+                {$_GET['msg-error']}
+            </div>";
+      } else if (isset($_GET['msg-success'])) {
+        echo "<div class='alert alert-success' role='alert'>
+                {$_GET['msg-success']}
+            </div>";
+      }
+    ?>
+
     <?php 
       include("../../config/connectDB.php");
       include "../../actions/listarPostagens.php";
     
-      if ($listaPosts) {
+      if (isset($listaPosts)) {
         foreach ($listaPosts as $post) {
           echo "<div class='card my-4'>";
             echo "<div class='card-body'>";
-              echo "<h3>".$post['titulo']."</h3>";
-              echo "<p>".$post['conteudo']."</p>";
-              echo "<a href='#' class='btn btn-primary'>Editar Postagem</a>";
+            echo "<div class='row'>";
+              echo "<div class='col'>";
+                echo "<h3>".$post['titulo']."</h3>";
+                echo "<p>".$post['conteudo']."</p>";
+                echo "<a href='formEditarPost.php?id_post=".$post['id_post']."' class='btn btn-primary'>Editar Postagem</a>";
+              echo "</div>";
+              echo "<div class='col d-flex justify-content-end align-items-center'>";
+                echo "<a href='../../actions/deletarPost.php?id_post=".$post['id_post']."'><span class='bi bi-trash pe-5 h3 text-success' style='cursor: pointer;'></span></a>";
+              echo "</div>";
+            echo "</div>";
             echo "</div>";
           echo "</div>";
         }
       } else {
-        echo "<h2>Não exite nenhuma postagem ainda</h2>";
+        echo "<h2 class='pb-5'>Não existe nenhuma postagem ainda</h2>";
       }
     ?>
   </div>

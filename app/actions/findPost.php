@@ -1,27 +1,27 @@
 <?php
 
-function findById($id_aluno) {
+function findById($id_post) {
   global $mysqli;
   connect();
   
-  $sql = "SELECT id_aluno, nome, email, telefone, cpf FROM alunos WHERE id_aluno=?;";
+  $sql = "SELECT id_post, titulo, conteudo FROM posts WHERE id_post=?;";
   $stmt = $mysqli->prepare($sql);
   if (!$stmt) {
     die("Erro ao encontrar, Problema no acesso ao banco de dados");
   }
-  $stmt->bind_param("i", $id_aluno);
+  $stmt->bind_param("i", $id_post);
   $stmt->execute();
   $result = $stmt->get_result();
   
   if($result->num_rows == 1){
-    $aluno = $result->fetch_object();
+    $post = $result->fetch_object();
   } else {
-    $aluno = false;
+    $post = false;
   }
   
   close();
   
-  if (isset($aluno)) {
-     return $aluno;
+  if (isset($post)) {
+     return $post;
   }
 }

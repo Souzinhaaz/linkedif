@@ -1,3 +1,13 @@
+<?php
+include("../../../config/connectDB.php");
+include("../../../actions/contarUsuarios.php");
+
+$total_alunos = contarAlunos();
+$total_professores = contarProfessores();
+$total_usuarios = $total_alunos + $total_professores;
+$total_posts = contarPosts();
+close();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,7 +36,36 @@
         <ol class="breadcrumb mb-4">
           <li class="breadcrumb-item active">Dashboard do sistema</li>
         </ol>
-        <div class="card-body">
+        <div class="row">
+          <div class="card col mx-4">
+            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+              <h4 class="card-title text-center">Total de alunos cadastrados no sistema</h4>
+              <h1 class="card-text text-center"><?php echo $total_alunos ?></h1>
+              <a href="formAluno.php" class="btn btn-lg btn-primary mt-4">Cadastrar Aluno</a>
+            </div>
+          </div>
+
+          <div class="card col mx-4">
+            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+              <h4 class="card-title text-center">Total de professores cadastrados no sistema</h4>
+              <h1 class="card-text text-center"><?php echo $total_professores ?></h1>
+              <a href="formProf.php" class="btn btn-lg btn-success mt-4">Cadastrar Professor</a>
+            </div>
+          </div>
+
+          <div class="card col mx-4">
+            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+              <h4 class="card-title text-center">Total de usuários no sistema</h4>
+              <h1 class="card-text text-center"><?php echo $total_usuarios ?></h1>
+            </div>
+          </div>
+          
+          <div class="card col mx-4">
+            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+              <h4 class="card-title text-center">Total de posts cadastrados</h4>
+              <h1 class="card-text text-center"><?php echo $total_posts ?></h1>
+            </div>
+          </div>
 
         </div>
       </div>

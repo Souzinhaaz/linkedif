@@ -32,7 +32,7 @@ if (empty($_POST['title'])) {
 
     if ($stmt->affected_rows > 0) {
         $msg = "Post cadastrado com sucesso!";
-        header("Location: ../pages/private/newPost.php?msg-sucesso={$msg}");
+        header("Location: ../pages/private/areaAluno.php?msg-success={$msg}");
     } else {
         $msg = "Erro ao cadastrar o post!";
         header("Location: ../pages/private/newPost.php?msg-error={$msg}");

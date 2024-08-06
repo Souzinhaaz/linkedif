@@ -142,9 +142,18 @@ require_once("../../config/sessionStart.php");
           case "newPost.php":
             echo "<a href='../public/home.php' class='nav-item nav-link'>Pagina Inicial</a>";
             echo "<a href='https://wa.me/557721029545' target='_blank' class='nav-item nav-link'>Contato</a>";
-            echo "<a href='areaAluno.php' class='nav-item nav-link'>Área do Aluno</a>";
+            echo "<a href='areaAluno.php' class='nav-item nav-link active'>Área do Aluno</a>";
             echo "<a href='cursos.php' class='nav-item nav-link '>Cursos</a>";
-            echo "<a href='../private/materiaisEstudo.php' class='nav-item nav-link active'>Materiais de Estudo</a>";
+            echo "<a href='../private/materiaisEstudo.php' class='nav-item nav-link'>Materiais de Estudo</a>";
+            echo "<a href='../../config/logOut.php' class='nav-item nav-link'>Sair<i class='fa fa-arrow-right ms-3'></i></a>";
+            break;
+
+          case "formEditarPost.php":
+            echo "<a href='../public/home.php' class='nav-item nav-link'>Pagina Inicial</a>";
+            echo "<a href='https://wa.me/557721029545' target='_blank' class='nav-item nav-link'>Contato</a>";
+            echo "<a href='areaAluno.php' class='nav-item nav-link active'>Área do Aluno</a>";
+            echo "<a href='cursos.php' class='nav-item nav-link '>Cursos</a>";
+            echo "<a href='../private/materiaisEstudo.php' class='nav-item nav-link'>Materiais de Estudo</a>";
             echo "<a href='../../config/logOut.php' class='nav-item nav-link'>Sair<i class='fa fa-arrow-right ms-3'></i></a>";
             break;
         }
