@@ -17,7 +17,7 @@
 
 <body class="sb-nav-fixed">
   <?php
-  require_once ("./partials/sideHeader.php");
+  require_once("./partials/sideHeader.php");
   ?>
   <div id="layoutSidenav_content">
     <main>
@@ -27,31 +27,41 @@
           <div class="card mb-4">
             <div class="card-body">
               <table id="datatablesSimple">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                  </tr>
-                </tfoot>
+                <?php
+                include_once("../../../config/connectDB.php");
+                include_once("../../../actions/listarProfessores.php");
+                $headfoot = '
+                      <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                      </tr>
+                    </tfoot>
+                    ';
+                if (isset($listaProfessores)) {
+                  echo $headfoot;
+                } else {
+                  echo "<h3 class='pb-4'>Nenhum professor encontrado!</h3>";
+                }
+                ?>
                 <tbody>
                   <tr>
                     <?php
-                    include_once ("../../../actions/listarProfessores.php");
-                    if ($listaProfessores) {
+                    if (isset($listaProfessores) && $listaProfessores) {
                       foreach ($listaProfessores as $professor) {
                         echo "<td>" . $professor['id_professor'] . "</td>";
                         echo "<td>" . $professor['nome'] . "</td>";
@@ -60,9 +70,6 @@
                         echo "<td><a href='../../actions/editarProfessor.php?acao=pesquisarPorId&id_professor=" . $professor['id_professor'] . "'>Editar</a></td>";
                         echo "<td><a href='../../actions/deletarProfessor.php?acao=excluirProfessor&id_professor=" . $professor['id_professor'] . "'>Excluir</a></td>";
                       }
-
-                    } else {
-                      echo "Nenhum professor encontrado";
                     }
                     ?>
                   </tr>
@@ -76,24 +83,22 @@
     <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; Your Website 2023</div>
+          <div class="text-muted">Copyright &copy; LinkedIF 2024</div>
           <div>
-            <a href="#">Privacy Policy</a>
+            <a href="#">Política de Privacidade</a>
             &middot;
-            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Termos &amp; Condições </a>
           </div>
         </div>
       </div>
     </footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="js/admin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
   <script src="assets/demo/chart-area-demo.js"></script>
   <script src="assets/demo/chart-bar-demo.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
   <script src="js/datatables-simple-demo.js"></script>
 </body>
 

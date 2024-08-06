@@ -27,45 +27,54 @@
           <div class="card mb-4">
             <div class="card-body">
               <table id="datatablesSimple">
-                <thead>
+                <?php
+                include("../../../config/connectDB.php");
+                include "../../../actions/listarAlunos.php";
+                $headfoot = '
+                  <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr>
-                    <?php
-                    include "../../../actions/listarAlunos.php";
-                    if ($listaAlunos) {
-                      foreach ($listaAlunos as $aluno) {
-                        echo "<td>$aluno->id_aluno</td>";
-                        echo "<td>$aluno->nome</td>";
-                        echo "<td>$aluno->email</td>";
-                        echo "<td>$aluno->telefone</td>";
-                        echo "<td><a href='../../actions/editarAluno.php?acao=pesquisarPorId&id_aluno=$aluno->id_aluno'>Editar</a></td>";
-                        echo "<td><a href='../../actions/deletarAluno.php?acao=excluirUsuario&id_aluno=$aluno->id_aluno'>Excluir</a></td>";
-                      }
-                    } else {
-                      echo "Nenhum aluno encontrado";
-                    }
-                    ?>
-                  </tr>
-                </tbody>
+                      <th>ID</th>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Telefone</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Telefone</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
+                    </tr>
+                  </tfoot>
+                  ';
+                if (isset($listaAlunos)) {
+                  echo $headfoot;
+                } else {
+                  echo "<h3 class='pb-4'>Nenhum aluno encontrado!</h3>";
+                }
+
+                if ($listaAlunos) {
+                  foreach ($listaAlunos as $aluno) {
+                    echo "<tbody>";
+                    echo "<tr>";
+                    echo "<td>" . $aluno['id_aluno'] . "</td>";
+                    echo "<td>" . $aluno['nome'] . "</td>";
+                    echo "<td>" . $aluno['email'] . "</td>";
+                    echo "<td>" . $aluno['telefone'] . "</td>";
+                    echo "<td><a href='../../../actions/editarAluno.php?id_aluno=" . $aluno['id_aluno'] . "'>Editar</a></td>";
+                    echo "<td><a href='../../../actions/deletarAluno.php?id_aluno=" . $aluno['id_aluno'] . "'>Excluir</a></td>";
+                    echo "</tr>";
+                    echo "</tbody>";
+                  }
+                } else {
+                  echo "Nenhum aluno encontrado";
+                }
+                ?>
               </table>
             </div>
           </div>
@@ -75,11 +84,11 @@
     <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; Your Website 2023</div>
+          <div class="text-muted">Copyright &copy; LinkedIF 2024</div>
           <div>
-            <a href="#">Privacy Policy</a>
+            <a href="#">Política de Privacidade</a>
             &middot;
-            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Termos &amp; Condições </a>
           </div>
         </div>
       </div>

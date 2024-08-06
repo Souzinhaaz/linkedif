@@ -11,7 +11,7 @@ if (empty($_POST['name'])) {
     $msg = "Por favor, preencha o campo do email"; 
 } else if (empty($_POST['password'])) {
     $msg = "Por favor, insira a sua senha";
-} else if (empty($_POST['phone-number'])) {
+} else if (empty($_POST['telephone'])) {
     $msg = "Por favor, insira o seu número de telefone";
 } else if (empty($_POST['cpf'])) {
     $msg = "Por favor, insira o seu número de CPF";
@@ -21,7 +21,7 @@ if (empty($_POST['name'])) {
 
     $nome = $_POST['name'];
     $email = $_POST['email'];
-    $telefone = $_POST['phone-number'];
+    $telefone = $_POST['telephone'];
     $senha = password_hash($_POST['password'], PASSWORD_DEFAULT);   
     $cpf = $_POST['cpf'];
 

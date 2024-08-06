@@ -1,8 +1,7 @@
 <?php
-
 require_once("../config/connectDB.php");
 require_once("../config/validacoes.php");
-
+$finalRoute = require_once("../config/getRoute.php");
 $msg;
 
 if (empty($_POST['name'])) {            
@@ -18,7 +17,6 @@ if (empty($_POST['name'])) {
 } else if(verificarEmail($_POST['email'])){
     $msg = "Email já cadastrado. Por favor, informe outro email.";
 } else {
-
     $nome = $_POST['name'];
     $email = $_POST['email'];
     $telefone = $_POST['telephone'];
@@ -42,10 +40,13 @@ if (empty($_POST['name'])) {
 
     if ($stmt->affected_rows > 0) {
         $msg = "Aluno cadastrado com sucesso!";
+        if ($finalRoute == "areaAluno.php") {
+            header("Location: ../pages/private/admin/formAluno.php?msg-success={$msg}");
+        }
         header("Location: ../pages/public/login.php?msg-sucesso={$msg}");
     } else {
         $msg = "Erro ao cadastrar o aluno!";
-        header("Location: ../pages/public/login.php?msg-error={$msg}");
+        header("Location: ../pages/private/admin/formAluno.php?msg-success={$msg}");
     }
 
     close();

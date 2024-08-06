@@ -22,10 +22,10 @@
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid px-4">
-        <h1 class="mt-4">Cadastrar Professor</h1>
+        <h1 class="mt-4">Editar Aluno</h1>
         <ol class="breadcrumb mb-4">
           <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-          <li class="breadcrumb-item active"> <a href="formProf.php"></a>Cadastrar Professor</li>
+          <li class="breadcrumb-item active"> <a href="formAluno.php"></a>Editar Aluno</li>
         </ol>
         <?php
         if (isset($_GET['msg-success'])) {
@@ -38,10 +38,10 @@
                                     </div>";
         }
         ?>
-        <div class="card mx-auto d-flex justify-content-center">
+        <div class="card mx-auto w-50 d-flex justify-content-center">
           <div class="card-body">
-            <h5 class="card-title h2 text-center mb-4">Formulário para professores</h5>
-            <form method="POST" action="../../../actions/cadastroProf.php">
+            <h5 class="card-title h2 text-center mb-4">Formulário para alunos</h5>
+            <form method="POST" action="../../../actions/editarAluno.php">
               <div class="form-group mb-4">
                 <label for="name" class="mb-2">Nome Completo: </label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome">
@@ -68,7 +68,7 @@
               </div>
 
               <div class="form-group d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary btn-lg w-50">Cadastrar</button>
+                <button type="submit" class="btn btn-primary btn-lg w-25">Cadastrar</button>
               </div>
             </form>
           </div>

@@ -44,9 +44,9 @@ include("../../config/protect.php");
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Criar nova disciplina</h5>
-            <p class="card-text">Crie agora uma nova disciplina, importante para poder criar um novo material didático.</p>
-            <a href="#" class="btn btn-primary">Criar Disciplina</a>
+            <h5 class="card-title">Criar nova Postagem</h5>
+            <p class="card-text">Crie agora uma nova postagem, faça postagens interessantes sobre alguma matéria.</p>
+            <a href="newPost.php" class="btn btn-primary">Criar Postagem</a>
           </div>
         </div>
       </div>
@@ -64,7 +64,26 @@ include("../../config/protect.php");
   <!-- Opções End -->
 
   <div class="container-xxl">
-    <h1>Acessar Postagens</h1>
+    <h1>Postagens</h1>
+
+    <?php 
+      include("../../config/connectDB.php");
+      include "../../actions/listarPostagens.php";
+    
+      if ($listaPosts) {
+        foreach ($listaPosts as $post) {
+          echo "<div class='card my-4'>";
+            echo "<div class='card-body'>";
+              echo "<h3>".$post['titulo']."</h3>";
+              echo "<p>".$post['conteudo']."</p>";
+              echo "<a href='#' class='btn btn-primary'>Editar Postagem</a>";
+            echo "</div>";
+          echo "</div>";
+        }
+      } else {
+        echo "<h2>Não exite nenhuma postagem ainda</h2>";
+      }
+    ?>
   </div>
 
   <?php
