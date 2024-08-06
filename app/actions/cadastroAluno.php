@@ -1,11 +1,11 @@
 <?php
 require_once("../config/connectDB.php");
 require_once("../config/validacoes.php");
-$finalRoute = require_once("../config/getRoute.php");
 $msg;
 
 if (empty($_POST['name'])) {            
     $msg = "Preencha o campo do nome";
+    echo "Chegou aqui";
 } else if (empty($_POST['email'])) {
     $msg = "Por favor, preencha o campo do email";
 } else if (empty($_POST['password'])) {
@@ -40,13 +40,18 @@ if (empty($_POST['name'])) {
 
     if ($stmt->affected_rows > 0) {
         $msg = "Aluno cadastrado com sucesso!";
-        if ($finalRoute == "areaAluno.php") {
+        if (isset($_GET['admin'])) {
             header("Location: ../pages/private/admin/formAluno.php?msg-success={$msg}");
+        } else {
+            header("Location: ../pages/public/login.php?msg-sucesso={$msg}");
         }
-        header("Location: ../pages/public/login.php?msg-sucesso={$msg}");
     } else {
         $msg = "Erro ao cadastrar o aluno!";
-        header("Location: ../pages/private/admin/formAluno.php?msg-success={$msg}");
+        if (isset($_GET['admin'])) {
+            header("Location: ../pages/private/admin/formAluno.php?msg-error={$msg}");
+        } else {
+            header("Location: ../pages/public/login.php?msg-error={$msg}");
+        }
     }
 
     close();

@@ -23,6 +23,17 @@
     <main>
       <div class="container-fluid px-4">
         <h1 class="mt-4">Tabela de Alunos</h1>
+        <?php
+        if (isset($_GET['msg-error'])) {
+          echo "<div class='alert alert-danger' role='alert'>
+                    {$_GET['msg-error']}
+                </div>";
+        } else if (isset($_GET['msg-success'])) {
+          echo "<div class='alert alert-success' role='alert'>
+                    {$_GET['msg-success']}
+                </div>";
+        }
+        ?>
         <div class="row">
           <div class="card mb-4">
             <div class="card-body">
@@ -58,7 +69,7 @@
                   echo "<h3 class='pb-4'>Nenhum aluno encontrado!</h3>";
                 }
 
-                if ($listaAlunos) {
+                if (isset($listaAlunos)) {
                   foreach ($listaAlunos as $aluno) {
                     echo "<tbody>";
                     echo "<tr>";
@@ -66,7 +77,7 @@
                     echo "<td>" . $aluno['nome'] . "</td>";
                     echo "<td>" . $aluno['email'] . "</td>";
                     echo "<td>" . $aluno['telefone'] . "</td>";
-                    echo "<td><a href='../../../actions/editarAluno.php?id_aluno=" . $aluno['id_aluno'] . "'>Editar</a></td>";
+                    echo "<td><a href='formEditarAluno.php?id_aluno=" . $aluno['id_aluno'] . "'>Editar</a></td>";
                     echo "<td><a href='../../../actions/deletarAluno.php?id_aluno=" . $aluno['id_aluno'] . "'>Excluir</a></td>";
                     echo "</tr>";
                     echo "</tbody>";

@@ -12,4 +12,8 @@ if($result->num_rows > 0){
 
 close();
 
-return $listaAlunos;
+if (isset($listaAlunos)) {
+   return $listaAlunos;
+} else {
+   return false;
+}

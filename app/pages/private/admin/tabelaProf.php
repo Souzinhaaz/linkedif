@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8" />
@@ -23,6 +23,17 @@
     <main>
       <div class="container-fluid px-4">
         <h1 class="mt-4">Tabela de Professores</h1>
+        <?php
+        if (isset($_GET['msg-error'])) {
+          echo "<div class='alert alert-danger' role='alert'>
+                    {$_GET['msg-error']}
+                </div>";
+        } else if (isset($_GET['msg-success'])) {
+          echo "<div class='alert alert-success' role='alert'>
+                    {$_GET['msg-success']}
+                </div>";
+        }
+        ?>
         <div class="row">
           <div class="card mb-4">
             <div class="card-body">
@@ -67,8 +78,8 @@
                         echo "<td>" . $professor['nome'] . "</td>";
                         echo "<td>" . $professor['email'] . "</td>";
                         echo "<td>" . $professor['telefone'] . "</td>";
-                        echo "<td><a href='../../actions/editarProfessor.php?acao=pesquisarPorId&id_professor=" . $professor['id_professor'] . "'>Editar</a></td>";
-                        echo "<td><a href='../../actions/deletarProfessor.php?acao=excluirProfessor&id_professor=" . $professor['id_professor'] . "'>Excluir</a></td>";
+                        echo "<td><a href='formEditarProf.php?id_professor=" . $professor['id_professor'] . "'>Editar</a></td>";
+                        echo "<td><a href='../../../actions/deletarProfessor.php?id_professor=" . $professor['id_professor'] . "'>Excluir</a></td>";
                       }
                     }
                     ?>

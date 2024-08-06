@@ -41,7 +41,7 @@
         <div class="card mx-auto d-flex justify-content-center">
           <div class="card-body">
             <h5 class="card-title h2 text-center mb-4">Formulário para alunos</h5>
-            <form method="POST" action="../../../actions/cadastroAluno.php">
+            <form method="POST" action="../../../actions/cadastroAluno.php?admin=1">
               <div class="form-group mb-4">
                 <label for="name" class="mb-2">Nome Completo: </label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Informe o nome">
