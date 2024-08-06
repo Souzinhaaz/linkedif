@@ -105,7 +105,7 @@ require_once("../../config/loggedIn.php");
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1 d-flex flex-column">
-                    <button class="btn btn-primary">Entrar</button>
+                    <button class="btn btn-primary">Cadastrar</button>
                     <a class="text-muted py-2" href="#!">Esqueceu a sua senha?</a>
                     <p class="text-muted py-2">Já possui uma conta? <a href="login.php">Fazer Login</a></p>
                   </div>
